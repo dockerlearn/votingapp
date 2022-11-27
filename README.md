@@ -50,5 +50,7 @@ cd votingapp
 vagrant up
 ```
 
+> **Note!**: CodeQL is installed on github to perform vulnerability check on PR creation.
+
 
 
