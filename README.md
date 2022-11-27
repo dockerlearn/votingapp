@@ -1,4 +1,4 @@
-# votingapp
+# Votingapp
 
 This is a simple votingapp using Redis db as backend.
 
