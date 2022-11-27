@@ -16,7 +16,8 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: registry.hub.docker.com/shrey03/votingapp:v1
+        image: docker.io/shrey03/votingapp:v1
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 100m

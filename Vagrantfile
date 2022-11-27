@@ -37,50 +37,10 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder '.', '/home/'+VM_USER+'', disabled: true
   # Install Git, Node.js 6.x.x, Latest npm
   config.vm.provision "shell", inline: <<-SHELL
-    #apt-get update -y
     apt-get install -y git
 	sudo apt update -y
 	sudo apt upgrade -y
     sudo apt-get install curl apt-transport-https ca-certificates software-properties-common -y
-	# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    # sudo apt update -y
-    # apt-cache policy docker-ce
-	# sudo apt install docker-ce -y
-	# sudo systemctl restart docker
-	# sudo systemctl status docker
-	# sudo usermod -a -G docker vagrant
-	# wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-	# sudo cp minikube-linux-amd64 /usr/local/bin/minikube
-	# sudo chmod 755 /usr/local/bin/minikube
-	# minikube version
-	# curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-	# chmod +x ./kubectl
-	# sudo mv ./kubectl /usr/local/bin/kubectl
-	# kubectl version -o json
-	# #Setup minikube
-	# #echo "127.0.0.1 minikube minikube." | sudo tee -a /etc/hosts
-    # sudo mkdir -p $HOME/.minikube
-	# sudo mkdir -p $HOME/.kube
-	# sudo touch $HOME/.kube/config
-	# sudo export KUBECONFIG=$HOME/.kube/config
-    # sudo chown -R $USER:$USER $HOME/.kube
-    # sudo chown -R $USER:$USER $HOME/.minikube
-	# sudo minikube start --force
-	# sudo minikube addons enable metrics-server
-	# wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz
-	# tar xvf helm-v3.9.3-linux-amd64.tar.gz
-	# sudo mv linux-amd64/helm /usr/local/bin
-	# rm helm-v3.9.3-linux-amd64.tar.gz
-	# rm -rf linux-amd64
-
-	# helm repo add my-repo https://charts.bitnami.com/bitnami
-	# helm install my-release my-repo/redis --set architecture=standalone
-	# git clone https://github.com/dockerlearn/votingapp
-	# cd votingapp
-	# kubectl apply -f votebank.yml
-	# kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=1 --max=5 
-	# sudo minikube service azure-vote-front --url
   SHELL
   config.vm.provision "shell", inline: $vagrant, privileged: false  
 end
