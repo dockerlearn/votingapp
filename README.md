@@ -49,8 +49,16 @@ git clone https://github.com/dockerlearn/votingapp.git
 cd votingapp
 vagrant up
 ```
+Once installed you can go vagrant ssh and use curl on the ip to check
+
+>**Note!** To open votingapp on local laptop. Run below command:
+>`ssh -fN -L 8081:192.168.49.2:32005 -i .vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1 -p 2222`
+>This will create a reverseproxy through ssh.
+>1. 192.168.49.2:32005 -> is the IP URL of the votingservice you get at end thorugh sudo minikube service azure-vote-front --url command
+>2. .vagrant/machines/default/virtualbox/private_key -> Path to private_key for virtualbox
 
 > **Note!**: CodeQL is installed on github to perform vulnerability check on PR creation.
+
 
 
 
