@@ -8,12 +8,12 @@ VM_NAME = 'vagrant'
 # VM User — 'vagrant' by default
 VM_USER = 'vagrant'
 # Username on your Mac
-MAC_USER = 'shrey'
+#MAC_USER = 'shrey'
 # Host folder to sync
 #HOST_PATH = '/Users/' + MAC_USER + '/' + VM_NAME
-HOST_PATH = 'C:\Users\shrey\OneDrive\Documents\vagrant'
+#HOST_PATH = 'C:\Users\shrey\OneDrive\Documents\vagrant'
 # Where to sync to on Guest — 'vagrant' is the default user name
-GUEST_PATH = '/home/' + VM_USER + '/' + VM_NAME
+#GUEST_PATH = '/home/' + VM_USER + '/' + VM_NAME
 # # VM Port — uncomment this to use NAT instead of DHCP
  VM_PORT = 8080
 Vagrant.configure(2) do |config|
@@ -32,9 +32,9 @@ Vagrant.configure(2) do |config|
   # # Port forwarding — uncomment this to use NAT instead of DHCP
   config.vm.network "forwarded_port", guest: 80, host: VM_PORT
   # Sync folder
-  config.vm.synced_folder HOST_PATH, GUEST_PATH
+  #config.vm.synced_folder HOST_PATH, GUEST_PATH
   # Disable default Vagrant folder, use a unique path per project
-  config.vm.synced_folder '.', '/home/'+VM_USER+'', disabled: true
+  #config.vm.synced_folder '.', '/home/'+VM_USER+'', disabled: true
   # Install Git, Node.js 6.x.x, Latest npm
   config.vm.provision "shell", inline: <<-SHELL
     apt-get install -y git
